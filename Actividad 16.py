@@ -33,6 +33,13 @@ class Resgistrobiblioteca:
                 print(f"{i}. {lib.mostrarlibros()}")
 
     def Eliminar(self):
+        buscado = input("Ingrese el codigo del libro")
+        for est in self.lista_libros:
+            if est.codigo == buscado:
+                self.lista_libros.remove(est)
+                print("Se elimino")
+                return
+        print("No existe el libro")
 
 class Usuarios:
     def __init__(self, nombre, carnet, carrera):
@@ -49,4 +56,5 @@ class Gestiones:
     def __str__(self):
         return f"libro prestado{self.prestamo}, devoluciones {self.devoluciones}"
 
+registrolib = Resgistrobiblioteca()
 
