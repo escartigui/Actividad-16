@@ -6,8 +6,20 @@ class Biblioteca:
         self.codigo = codigo
     def __str__(self):
         return f"Titulo{self.titulo}, Autor{self.autor}, Año de Publicación {self.anpubli}, Codigo {self.codigo}"
+class Resgistrobiblioteca:
+    def __init__(self):
+        self.lista_libros = []
 
-class Registrous:
+    def agregar(self):
+        try:
+            codigo = int(input("Digite el codigo de la libro: "))
+            titulo = input("Ingresa el titulo del libro: ")
+            autor = input("Ingresa el autor del libro: ")
+            anpubli = input("Ingresa el año de publicación del libro: ")
+        except ValueError:
+            print("porfavor verifica lo ingresados")
+
+class Usuarios:
     def __init__(self, nombre, carnet, carrera):
         self.nombre = nombre
         self.carnet = carnet
