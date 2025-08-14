@@ -4,7 +4,7 @@ class Biblioteca:
         self.autor = autor
         self.anpubli = anpubli
         self.codigo = codigo
-    def __str__(self):
+    def mostrarlibros(self):
         return f"Titulo{self.titulo}, Autor{self.autor}, Año de Publicación {self.anpubli}, Codigo {self.codigo}"
 class Resgistrobiblioteca:
     def __init__(self):
@@ -19,8 +19,20 @@ class Resgistrobiblioteca:
              titulo = input("Digite el titulo del libro: ")
              autor = input("Digite el autor del libro: ")
              anpubli = input("Digite el año de publicación del libro: ")
+             self.lista_libros.append(Biblioteca(titulo, autor, anpubli, codigo))
+             print("Estudiante Agregado")
         except ValueError:
             print("porfavor verifica lo ingresados")
+
+    def mostrar(self):
+        if not self.lista_libros:
+            print("No hay libros")
+        else:
+            print("Lista de libros: ")
+            for i, lib in enumerate(self.lista_libros,start=1):
+                print(f"{i}. {lib.mostrarlibros()}")
+
+    def Eliminar(self):
 
 class Usuarios:
     def __init__(self, nombre, carnet, carrera):
