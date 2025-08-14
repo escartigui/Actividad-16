@@ -20,7 +20,7 @@ class Resgistrobiblioteca:
              autor = input("Digite el autor del libro: ")
              anpubli = input("Digite el año de publicación del libro: ")
              self.lista_libros.append(Biblioteca(titulo, autor, anpubli, codigo))
-             print("Estudiante Agregado")
+             print("Agregado correctamente")
         except ValueError:
             print("porfavor verifica lo ingresados")
 
@@ -46,8 +46,25 @@ class Usuarios:
         self.nombre = nombre
         self.carnet = carnet
         self.carrera = carrera
-    def __str__(self):
+    def mostrarusuario(self):
         return f"Nombre{self.nombre}, Carnet{self.carnet}, Carrera{self.carrera}"
+
+class RegistroUsuario:
+    def __init__(self):
+        self.lista_usuarios = []
+
+    def agregarusu(self):
+        try:
+            while True:
+             carnet = int(input("Digite el codigo de la libro: "))
+             if carnet in self.lista_usuarios:
+                print("El libro ya existe")
+             nombre = input("Digite el nombre del usuario: ")
+             carrera = input("Digite la carrera del usuario: ")
+             self.lista_usuarios.append(Usuarios(nombre, carnet, carrera))
+             print("Agregado correctamente")
+        except ValueError:
+            print("porfavor verifica lo ingresados")
 
 class Gestiones:
     def __init__(self, prestamo,devoluciones):
