@@ -12,10 +12,13 @@ class Resgistrobiblioteca:
 
     def agregar(self):
         try:
-            codigo = int(input("Digite el codigo de la libro: "))
-            titulo = input("Ingresa el titulo del libro: ")
-            autor = input("Ingresa el autor del libro: ")
-            anpubli = input("Ingresa el año de publicación del libro: ")
+            while True:
+             codigo = int(input("Digite el codigo de la libro: "))
+             if codigo in self.lista_libros:
+                    print("El libro ya existe")
+             titulo = input("Digite el titulo del libro: ")
+             autor = input("Digite el autor del libro: ")
+             anpubli = input("Digite el año de publicación del libro: ")
         except ValueError:
             print("porfavor verifica lo ingresados")
 
